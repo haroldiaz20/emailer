@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.main-component{
+	padding-top: 64px; min-height: 400px;
+}
+
+.main-component .inner-container{
+	margin: 48px 72px;
+}
+.side-bar-component{
+	position: fixed !important;
+    padding-left: 280px !important;
+   /* border-bottom: 1px solid #eee; */
+}
+.list--container{
+	max-height: 200px;
+	overflow-y: auto;
+}
+.appBarTitle{
+  font-size: 16px;
+}
+
+.appBarSubTitle{
+    font-size: 16px;
+    font-style: oblique;
+}
+
+.inputActive{
+  display: block;
+  height: 50px;
+}
+
+.inputHidden{
+  display: none;
+}
+
+.dropZoneActive{
+  display: block;
+}
+
+.dropZoneHidden{
+  display: none;
+}
+
+.imagePreviewActive{
+  display: flex;
+}
+
+.imagePreviewHidden{
+  display: none;
+}
+
+.imgPreviewStyle {
+  display: flex;
+  margin: auto;
+  height: 100% !important;
+  width: auto !important;
+}
+
+.home-editor{
+  padding-left: 20px;
+    padding-right: 20px;
+    min-height: 400px;
+}
+
+.home-wrapper{
+  padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .side-bar-component {
+    padding-left: 20px !important;
+  }
+  .appBarTitle{
+  font-size: 14px;
+}
+  .appBarSubTitle{
+    font-size: 14px;
+    font-style: oblique;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .side-bar-component {
+    padding-left: 20px !important;
+  }
+  .appBarTitle{
+    font-size: 14px;
+    font-style: oblique;
+  }
+  
+  .appBarSubTitle{
+    font-size: 14px;
+    font-style: oblique;
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "development": {
+        "username": "postgres",
+        "password": "jrzOv2HbxayFFlsb",
+        "database": "emailing",
+        "host": "35.188.86.116",
+        "port": "5432",
+        "dialect": "postgres"
+    },
+    "test": {
+        "dialect": "postgres",
+        "storage": ":memory:"
+    },
+    "production": {
+        "username": "postgres",
+        "password": "jrzOv2HbxayFFlsb",
+        "database": "emailing",
+        "host": "35.188.86.116",
+        "port": "5432",
+        "dialect": "postgres"
+    }
+}

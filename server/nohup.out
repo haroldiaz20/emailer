@@ -1,0 +1,796 @@
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www "app.js"
+
+2017-03-21 05:57:05
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 05:57:06
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=6 and campaign.status=0 group by email.md5
+No emails found for this campaign
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'c86869537834efeb4e96cd5b2e6f4830' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'c1f406497c5035fb693771d5958b0b33' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = '959178d383b7f5603c50b0754ac8e90b' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'cc992dd8151ca875366d2f1396ba26b7' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'a87c9d3ef78c3b9107893d3987b0d446' LIMIT 1;
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): UPDATE "campaign" SET "status"=1,"updatedAt"='2017-03-21 05:57:07.351 +00:00' WHERE "id" = 6
+Message <f8d85d12-1347-fbce-258b-2c01b0ea5046@ip-172-31-28-83> sent: 250 2.0.0 OK 1490075827 s12sm36634978pfj.9 - gsmtp
+Message <59eef6f8-e1e0-ba96-a31a-369ccb3ffd31@ip-172-31-28-83> sent: 250 2.0.0 OK 1490075827 c186sm2119145pga.18 - gsmtp
+Message <63a4a334-9ca0-ca95-db67-bd073386bc87@ip-172-31-28-83> sent: 250 2.0.0 OK 1490075828 129sm36729346pgj.59 - gsmtp
+Message <0c560ecb-2fbc-1a9c-6efe-873cb11ae1eb@ip-172-31-28-83> sent: 250 2.0.0 OK 1490075828 t6sm36754673pgt.8 - gsmtp
+Message <d9fac916-c31c-c03b-3419-e22fee120797@ip-172-31-28-83> sent: 250 2.0.0 OK 1490075828 v4sm36600919pfb.36 - gsmtp
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [32m200 [0m72.778 ms - 756[0m
+[0mOPTIONS /auth/verify [32m200 [0m2.923 ms - 4[0m
+[0mPOST /auth/verify [32m200 [0m16.211 ms - 320[0m
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email";
+[0mGET /emails [36m304 [0m6.860 ms - -[0m
+[0mOPTIONS /products/create [32m204 [0m21.375 ms - -[0m
+uploaded!!
+Executing (default): SELECT "id", "email", "password", "first_name", "last_name", "phone", "image", "address", "token", "type", "createdAt", "updatedAt" FROM "user" AS "User" WHERE "User"."token" = 'YV0N2D2MBRin' LIMIT 1;
+Executing (default): INSERT INTO "product" ("id","name","value","description","path","createdAt","updatedAt","id_user") VALUES (DEFAULT,'New Product','9cNuhyAZOlwW','computerss','computador_4.jpg','2017-03-21 05:57:53.457 +00:00','2017-03-21 05:57:53.457 +00:00',1) RETURNING *;
+[0mPOST /products/create [32m200 [0m893.733 ms - 103[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product";
+[0mGET /products [32m200 [0m6.833 ms - 1638[0m
+[0mGET /images/C7ZrzBaVoAAtZYu.jpg [36m304 [0m1.491 ms - -[0m
+[0mGET /images/computer_apple.jpg [36m304 [0m1.750 ms - -[0m
+[0mGET /images/C7S8WGcUwAAc2la.jpg [36m304 [0m1.613 ms - -[0m
+[0mGET /images/C7ZXMKIUwAASYRr.jpg [36m304 [0m2.232 ms - -[0m
+[0mGET /images/computador_4.jpg [32m200 [0m2.859 ms - 178250[0m
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [32m200 [0m80.315 ms - 1213[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTg3WiIsImlhdCI6MTQ5MDA3NTgyNn0.kFl4WxYzQaLV-BkKPWvAHa7Ut4Dg6lQQnQBzwAzR_hA [32m200 [0m27.242 ms - 97902[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTg3WiIsImlhdCI6MTQ5MDA3NTgyNn0.cPl_Hoiceg9FSuWpknda-ZruFCMgfw0NCN2Bq_4otxQ [32m200 [0m25.892 ms - 126349[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTg3WiIsImlhdCI6MTQ5MDA3NTgyNn0.bGJU_Y3wpWpV4tqdfKQquUdn3HNiL_iaaJgM5oIWPBA [32m200 [0m42.447 ms - 153224[0m
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [36m304 [0m5.718 ms - -[0m
+[0mOPTIONS /auth/verify [32m200 [0m1.187 ms - 4[0m
+[0mPOST /auth/verify [32m200 [0m2.678 ms - 320[0m
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [36m304 [0m4.043 ms - -[0m
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www "app.js"
+
+2017-03-21 06:02:10
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 06:02:10
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=6 and campaign.status=0 group by email.md5
+No emails found for this campaign
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'c86869537834efeb4e96cd5b2e6f4830' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'c1f406497c5035fb693771d5958b0b33' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = '959178d383b7f5603c50b0754ac8e90b' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'cc992dd8151ca875366d2f1396ba26b7' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'a87c9d3ef78c3b9107893d3987b0d446' LIMIT 1;
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): UPDATE "campaign" SET "status"=1,"updatedAt"='2017-03-21 06:02:11.705 +00:00' WHERE "id" = 6
+Message <8c5acabb-ccd1-fb7b-1a04-cfef3b48d1a1@ip-172-31-28-83> sent: 250 2.0.0 OK 1490076131 x10sm36629088pfi.21 - gsmtp
+Message <9d9395a0-7106-9ade-b2d6-b9153d04df20@ip-172-31-28-83> sent: 250 2.0.0 OK 1490076131 i127sm36627048pfe.15 - gsmtp
+Message <47cbc9a0-105f-6d8c-d343-590b3282ac9c@ip-172-31-28-83> sent: 250 2.0.0 OK 1490076132 s20sm36697787pfg.11 - gsmtp
+Message <08cd0d6c-548f-fe13-8e62-8a9b0ec08d7d@ip-172-31-28-83> sent: 250 2.0.0 OK 1490076132 p189sm24102878pfb.128 - gsmtp
+Message <d5848fd7-8835-69fe-9d8a-e69471514d82@ip-172-31-28-83> sent: 250 2.0.0 OK 1490076133 9sm9450959pfn.108 - gsmtp
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [36m304 [0m61.957 ms - -[0m
+[0mOPTIONS /auth/verify [32m200 [0m3.045 ms - 4[0m
+[0mPOST /auth/verify [32m200 [0m16.513 ms - 320[0m
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [32m200 [0m4.848 ms - 1199[0m
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'a87c9d3ef78c3b9107893d3987b0d446' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 1;
+Executing (default): INSERT INTO "email_open" ("opened_on","ip","link","count","is_mobile","is_tablet","is_desktop","source","os","platform","browser","sent_at","createdAt","updatedAt","id_campaign","id_email") VALUES ('2017-03-21 06:03:00.000 +00:00','::ffff:66.249.88.130','http://ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000/open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE0WiIsImlhdCI6MTQ5MDA3NjEzMH0.emfVA0uvvsIgPYcbRAgNn1n8BiBs1jFqNB2ycuaRKGs&email=a87c9d3ef78c3b9107893d3987b0d446',1,false,false,true,'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)','Windows XP','Microsoft Windows','Firefox','2017-03-21 06:02:10.714 +00:00','2017-03-21 06:03:00.287 +00:00','2017-03-21 06:03:00.287 +00:00',6,1) RETURNING *;
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE0WiIsImlhdCI6MTQ5MDA3NjEzMH0.emfVA0uvvsIgPYcbRAgNn1n8BiBs1jFqNB2ycuaRKGs&email=a87c9d3ef78c3b9107893d3987b0d446 [32m200 [0m105.753 ms - 84[0m
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.Ygpv_zZu0I6J6t96RZTWpMWjxOczmSwCdMqyGxdyQ-4 [32m200 [0m76.940 ms - 97902[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.ADA6XFdkkHL23pHdkBcyUj31wEfIe1nkEJN1LiAa9R8 [32m200 [0m30.454 ms - 126349[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.65awbSBeOTKQaj9d3zS-GeCd52Eiq4URgf149KJ8l4w [32m200 [0m37.151 ms - 153224[0m
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [36m304 [0m6.998 ms - -[0m
+[0mOPTIONS /auth/verify [32m200 [0m1.248 ms - 4[0m
+[0mPOST /auth/verify [32m200 [0m1.553 ms - 320[0m
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [32m200 [0m4.284 ms - 1199[0m
+Executing (default): select l.value, l.name, l.emails_number, l.is_enable, l."createdAt" from list l where l.id IN (select cl.id_list from campaign_list cl left join campaign c on cl.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+Executing (default): select p.value, p.name, p.description, p.path, p."createdAt" from product p where p.id IN (select cp.id_product from campaign_product cp left join campaign c on cp.id_campaign=c.id where c.value='0B0Xd7jpbcXe');
+[0mGET /campaign/0B0Xd7jpbcXe/lists [32m200 [0m70.818 ms - 188[0m
+[0mGET /campaign/0B0Xd7jpbcXe/products [32m200 [0m71.167 ms - 651[0m
+[0mGET /images/C7ZXMKIUwAASYRr.jpg [36m304 [0m1.498 ms - -[0m
+[0mGET /images/C7ZrzBaVoAAtZYu.jpg [36m304 [0m1.859 ms - -[0m
+[0mGET /images/C7S8WGcUwAAc2la.jpg [36m304 [0m2.495 ms - -[0m
+Executing (default): select eo.browser, eo.ip, eo.opened_on, eo.platform, eo.sent_at, eo.count, eo.os, e.email, e.sexo, e.country, e.age from email_open eo inner join email e on eo.id_email = e.id inner join campaign c on eo.id_campaign = c.id where c.value='0B0Xd7jpbcXe'
+[0mGET /campaign/0B0Xd7jpbcXe/opens [32m200 [0m66.828 ms - 327[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'a87c9d3ef78c3b9107893d3987b0d446' LIMIT 1;
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.Ygpv_zZu0I6J6t96RZTWpMWjxOczmSwCdMqyGxdyQ-4 [32m200 [0m8.310 ms - 97902[0m
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 1;
+Executing (default): UPDATE "email_open" SET "count"=2,"updatedAt"='2017-03-21 06:03:50.161 +00:00' WHERE "id_campaign" = 6 AND "id_email" = 1
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE0WiIsImlhdCI6MTQ5MDA3NjEzMH0.emfVA0uvvsIgPYcbRAgNn1n8BiBs1jFqNB2ycuaRKGs&email=a87c9d3ef78c3b9107893d3987b0d446 [32m200 [0m21.401 ms - 84[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.ADA6XFdkkHL23pHdkBcyUj31wEfIe1nkEJN1LiAa9R8 [32m200 [0m14.546 ms - 126349[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.65awbSBeOTKQaj9d3zS-GeCd52Eiq4URgf149KJ8l4w [32m200 [0m14.726 ms - 153224[0m
+Executing (default): select eo.browser, eo.ip, eo.opened_on, eo.platform, eo.sent_at, eo.count, eo.os, e.email, e.sexo, e.country, e.age from email_open eo inner join email e on eo.id_email = e.id inner join campaign c on eo.id_campaign = c.id where c.value='0B0Xd7jpbcXe'
+[0mGET /campaign/0B0Xd7jpbcXe/opens [32m200 [0m3.238 ms - 327[0m
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www "/home/ubuntu/api-mailer-v2/app.js"
+
+2017-03-21 14:11:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 14:11:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [36m304 [0m18.071 ms - -[0m
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www "app.js"
+
+2017-03-21 14:14:11
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 14:14:12
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www "app.js"
+
+2017-03-21 14:14:35
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Port 3000 is already in use
+
+npm ERR! Linux 4.4.0-66-generic
+npm ERR! argv "/usr/bin/nodejs" "/usr/bin/npm" "start" "app.js"
+npm ERR! node v6.10.0
+npm ERR! npm  v3.10.10
+npm ERR! code ELIFECYCLE
+npm ERR! api-mailer-v2@0.0.0 start: `node ./bin/www "app.js"`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the api-mailer-v2@0.0.0 start script 'node ./bin/www "app.js"'.
+npm ERR! Make sure you have the latest version of node.js and npm installed.
+npm ERR! If you do, this is most likely a problem with the api-mailer-v2 package,
+npm ERR! not with npm itself.
+npm ERR! Tell the author that this fails on your system:
+npm ERR!     node ./bin/www "app.js"
+npm ERR! You can get information on how to open an issue for this project with:
+npm ERR!     npm bugs api-mailer-v2
+npm ERR! Or if that isn't available, you can get their info via:
+npm ERR!     npm owner ls api-mailer-v2
+npm ERR! There is likely additional logging output above.
+
+npm ERR! Please include the following file with any support request:
+npm ERR!     /home/ubuntu/api-mailer-v2/npm-debug.log
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www "/home/ubuntu/api-mailer-v2/app.js"
+
+2017-03-21 14:19:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 14:19:38
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [36m304 [0m84.509 ms - -[0m
+2017-03-21 14:49:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 14:49:38
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 15:19:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 15:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 15:49:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 15:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 16:19:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 16:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [32m200 [0m93.559 ms - 1199[0m
+2017-03-21 16:49:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 16:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 17:19:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 17:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [36m304 [0m77.978 ms - -[0m
+hola ususarios
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [32m200 [0m89.222 ms - 756[0m
+[0mOPTIONS /auth/verify [32m200 [0m1.243 ms - 4[0m
+[0mPOST /auth/verify [32m200 [0m17.462 ms - 320[0m
+2017-03-21 17:49:38
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 17:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 18:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 18:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 18:49:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 18:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 19:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 19:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.ADA6XFdkkHL23pHdkBcyUj31wEfIe1nkEJN1LiAa9R8 [32m200 [0m85.422 ms - 126349[0m
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.Ygpv_zZu0I6J6t96RZTWpMWjxOczmSwCdMqyGxdyQ-4 [32m200 [0m3.593 ms - 97902[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.65awbSBeOTKQaj9d3zS-GeCd52Eiq4URgf149KJ8l4w [32m200 [0m76.413 ms - 153224[0m
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'a87c9d3ef78c3b9107893d3987b0d446' LIMIT 1;
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 1;
+Executing (default): UPDATE "email_open" SET "count"=3,"updatedAt"='2017-03-21 19:34:04.039 +00:00' WHERE "id_campaign" = 6 AND "id_email" = 1
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE0WiIsImlhdCI6MTQ5MDA3NjEzMH0.emfVA0uvvsIgPYcbRAgNn1n8BiBs1jFqNB2ycuaRKGs&email=a87c9d3ef78c3b9107893d3987b0d446 [32m200 [0m93.860 ms - 84[0m
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [36m304 [0m4.989 ms - -[0m
+2017-03-21 19:49:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 19:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 20:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 20:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 20:49:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 20:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+globals
+ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000
+Executing (default): select c.name, c.status, c.description, c.value, c.friendly_from, c.subject, c."createdAt", (select coalesce(count(eo.id_email),0) from email_open eo where eo.id_campaign=c.id) as opens, (select coalesce(count(ec.id_email),0) from email_click ec where ec.id_campaign=c.id) as clicks from campaign c
+[0mGET /campaign [32m200 [0m69.894 ms - 1199[0m
+2017-03-21 21:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 21:19:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 21:49:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 21:49:39
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 22:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 22:19:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 22:49:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 22:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 23:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 23:19:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-21 23:49:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-21 23:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 00:19:39
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 00:19:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 00:49:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 00:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 01:19:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 01:19:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 01:49:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 01:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 02:19:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 02:19:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'c1f406497c5035fb693771d5958b0b33' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 11;
+Executing (default): INSERT INTO "email_open" ("opened_on","ip","link","count","is_mobile","is_tablet","is_desktop","source","os","platform","browser","sent_at","createdAt","updatedAt","id_campaign","id_email") VALUES ('2017-03-22 02:39:56.000 +00:00','::ffff:66.102.8.202','http://ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000/open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEwWiIsImlhdCI6MTQ5MDA3NjEzMH0.PsRJ_Bc_NDUhLA3R8lgzgMkaKBCC92t79W13e_tq7ak&email=c1f406497c5035fb693771d5958b0b33',1,false,false,true,'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)','Windows XP','Microsoft Windows','Firefox','2017-03-21 06:02:10.710 +00:00','2017-03-22 02:39:56.441 +00:00','2017-03-22 02:39:56.441 +00:00',6,11) RETURNING *;
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzExWiIsImlhdCI6MTQ5MDA3NjEzMH0.LyhZj2OOhg7V1wbJ_a9Wzgl-quVQxbbB6s5WaVFZ3Uw [32m200 [0m110.345 ms - 126349[0m
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzExWiIsImlhdCI6MTQ5MDA3NjEzMH0.VSN4CB2_dBv_djDaOHYsG4y7sbSnoot6vq9jM_HOUwU [32m200 [0m86.310 ms - 97902[0m
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEwWiIsImlhdCI6MTQ5MDA3NjEzMH0.PsRJ_Bc_NDUhLA3R8lgzgMkaKBCC92t79W13e_tq7ak&email=c1f406497c5035fb693771d5958b0b33 [32m200 [0m230.552 ms - 84[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzExWiIsImlhdCI6MTQ5MDA3NjEzMH0.8hF-8JvLKTzJG1Xswjse6TG726iFQaTlrJNmqsHQgwI [32m200 [0m103.047 ms - 153224[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiI5NTkxNzhkMzgzYjdmNTYwM2M1MGIwNzU0YWM4ZTkwYiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEyWiIsImlhdCI6MTQ5MDA3NjEzMH0.ZZUqSYNypqOLUadZ-RF3CiX0iXkexY6Dq-U1cd8QaKI [32m200 [0m5.620 ms - 97902[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiI5NTkxNzhkMzgzYjdmNTYwM2M1MGIwNzU0YWM4ZTkwYiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEyWiIsImlhdCI6MTQ5MDA3NjEzMH0.L9yDEIEsBmYzfrX6KTT3fXsBcIWgN71RZu-hPNyvjow [32m200 [0m2.613 ms - 153224[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiI5NTkxNzhkMzgzYjdmNTYwM2M1MGIwNzU0YWM4ZTkwYiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEyWiIsImlhdCI6MTQ5MDA3NjEzMH0.1RPswtBYtOhlUt2fjcdfaeUAK_huxavM52sKTS0qIF8 [32m200 [0m2.944 ms - 126349[0m
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = '959178d383b7f5603c50b0754ac8e90b' LIMIT 1;
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 9;
+Executing (default): INSERT INTO "email_open" ("opened_on","ip","link","count","is_mobile","is_tablet","is_desktop","source","os","platform","browser","sent_at","createdAt","updatedAt","id_campaign","id_email") VALUES ('2017-03-22 02:39:58.000 +00:00','::ffff:66.102.8.206','http://ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000/open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiI5NTkxNzhkMzgzYjdmNTYwM2M1MGIwNzU0YWM4ZTkwYiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEyWiIsImlhdCI6MTQ5MDA3NjEzMH0.H1UEHn1vNWkDp7y7W0aJf3ovJ1ESWv_wLyT508mKQUw&email=959178d383b7f5603c50b0754ac8e90b',1,false,false,true,'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)','Windows XP','Microsoft Windows','Firefox','2017-03-21 06:02:10.712 +00:00','2017-03-22 02:39:58.834 +00:00','2017-03-22 02:39:58.834 +00:00',6,9) RETURNING *;
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiI5NTkxNzhkMzgzYjdmNTYwM2M1MGIwNzU0YWM4ZTkwYiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzEyWiIsImlhdCI6MTQ5MDA3NjEzMH0.H1UEHn1vNWkDp7y7W0aJf3ovJ1ESWv_wLyT508mKQUw&email=959178d383b7f5603c50b0754ac8e90b [32m200 [0m23.366 ms - 84[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'c86869537834efeb4e96cd5b2e6f4830' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 5;
+Executing (default): INSERT INTO "email_open" ("opened_on","ip","link","count","is_mobile","is_tablet","is_desktop","source","os","platform","browser","sent_at","createdAt","updatedAt","id_campaign","id_email") VALUES ('2017-03-22 02:42:55.000 +00:00','::ffff:66.249.83.10','http://ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000/open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNjkxWiIsImlhdCI6MTQ5MDA3NjEzMH0._LAr7pQY5P0Nsf1JsyH0jOK7y02ljsEPZZbJUeZCo5A&email=c86869537834efeb4e96cd5b2e6f4830',1,false,false,true,'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)','Windows XP','Microsoft Windows','Firefox','2017-03-21 06:02:10.691 +00:00','2017-03-22 02:42:55.039 +00:00','2017-03-22 02:42:55.039 +00:00',6,5) RETURNING *;
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNjkxWiIsImlhdCI6MTQ5MDA3NjEzMH0._LAr7pQY5P0Nsf1JsyH0jOK7y02ljsEPZZbJUeZCo5A&email=c86869537834efeb4e96cd5b2e6f4830 [32m200 [0m49.490 ms - 84[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNjk1WiIsImlhdCI6MTQ5MDA3NjEzMH0.hdSz_1X9X4ArQNXZGkdkEv0NCksbssPTvBieapGOUts [32m200 [0m64.714 ms - 126349[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNjk1WiIsImlhdCI6MTQ5MDA3NjEzMH0.8gSGHwyuBntyDbOv2KKSFNtYdUeiQMt2twGwfW0UamI [32m200 [0m63.263 ms - 153224[0m
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNjk1WiIsImlhdCI6MTQ5MDA3NjEzMH0.KJdIdkh9cKbWq9hgfziSzuyiJGTc0uf6yg5rqHqh_cg [32m200 [0m38.384 ms - 97902[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE3WiIsImlhdCI6MTQ5MDA3NjEzMH0.DCDgLCfeyljGOUdJAkPdPQ1QAw1mHnInN0bZ0j0Dnsw [32m200 [0m3.471 ms - 153224[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'cc992dd8151ca875366d2f1396ba26b7' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 10;
+Executing (default): INSERT INTO "email_open" ("opened_on","ip","link","count","is_mobile","is_tablet","is_desktop","source","os","platform","browser","sent_at","createdAt","updatedAt","id_campaign","id_email") VALUES ('2017-03-22 02:42:58.000 +00:00','::ffff:66.249.88.38','http://ec2-35-166-109-87.us-west-2.compute.amazonaws.com:3000/open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE3WiIsImlhdCI6MTQ5MDA3NjEzMH0.ICOeaWIZZfg1pRtYs6dsB9niIrbvx7G6cGX0-U0s52M&email=cc992dd8151ca875366d2f1396ba26b7',1,false,false,true,'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko Firefox/11.0 (via ggpht.com GoogleImageProxy)','Windows XP','Microsoft Windows','Firefox','2017-03-21 06:02:10.717 +00:00','2017-03-22 02:42:58.600 +00:00','2017-03-22 02:42:58.600 +00:00',6,10) RETURNING *;
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE3WiIsImlhdCI6MTQ5MDA3NjEzMH0.ICOeaWIZZfg1pRtYs6dsB9niIrbvx7G6cGX0-U0s52M&email=cc992dd8151ca875366d2f1396ba26b7 [32m200 [0m23.855 ms - 84[0m
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE4WiIsImlhdCI6MTQ5MDA3NjEzMH0.jrQLmBmf3tJVf_0DqUyC6T1zSQmSTSniamfWOLPjo1Y [32m200 [0m6.103 ms - 97902[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE3WiIsImlhdCI6MTQ5MDA3NjEzMH0.WBzUMwUllDLiusEy8fwkLXsdtKHXwD9l2PV7_8U1h54 [32m200 [0m5.668 ms - 126349[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.ADA6XFdkkHL23pHdkBcyUj31wEfIe1nkEJN1LiAa9R8 [32m200 [0m9.148 ms - 126349[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Executing (default): SELECT "id", "email", "state", "country", "age", "md5", "sexo", "createdAt", "updatedAt" FROM "email" AS "Email" WHERE "Email"."md5" = 'a87c9d3ef78c3b9107893d3987b0d446' LIMIT 1;
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.Ygpv_zZu0I6J6t96RZTWpMWjxOczmSwCdMqyGxdyQ-4 [32m200 [0m7.862 ms - 97902[0m
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."value" = '0B0Xd7jpbcXe' LIMIT 1;
+Executing (default): SELECT "opened_on", "ip", "link", "count", "is_mobile", "is_tablet", "is_desktop", "source", "os", "platform", "browser", "sent_at", "createdAt", "updatedAt", "id_campaign", "id_email" FROM "email_open" AS "EmailOpen" WHERE "EmailOpen"."id_campaign" = 6 AND "EmailOpen"."id_email" = 1;
+Executing (default): UPDATE "email_open" SET "count"=4,"updatedAt"='2017-03-22 02:43:03.400 +00:00' WHERE "id_campaign" = 6 AND "id_email" = 1
+Sent: open_img.png
+[0mGET /open?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE0WiIsImlhdCI6MTQ5MDA3NjEzMH0.emfVA0uvvsIgPYcbRAgNn1n8BiBs1jFqNB2ycuaRKGs&email=a87c9d3ef78c3b9107893d3987b0d446 [32m200 [0m12.035 ms - 84[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJhODdjOWQzZWY3OGMzYjkxMDc4OTNkMzk4N2IwZDQ0NiIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDY6MDI6MTAuNzE1WiIsImlhdCI6MTQ5MDA3NjEzMH0.65awbSBeOTKQaj9d3zS-GeCd52Eiq4URgf149KJ8l4w [32m200 [0m3.469 ms - 153224[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Sent: C7ZXMKIUwAASYRr.jpg
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTgzWiIsImlhdCI6MTQ5MDA3NTgyNn0.kHKxO2tAArmc3EAleDbVIBq4Bz9iCprc2zuZzSTAQAE [32m200 [0m9.054 ms - 153224[0m
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTgzWiIsImlhdCI6MTQ5MDA3NTgyNn0.QnXNQBfVRCjhWKu7_sl9jvt9-NcT6qPINSivlNqV79A [32m200 [0m8.565 ms - 97902[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjYzk5MmRkODE1MWNhODc1MzY2ZDJmMTM5NmJhMjZiNyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTgzWiIsImlhdCI6MTQ5MDA3NTgyNn0.2MZk6aUEhpKBH_T_871rJZrYnRNfV4H3WYUiFjzKM18 [32m200 [0m8.586 ms - 126349[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTgxWiIsImlhdCI6MTQ5MDA3NTgyNn0.KnYALyIyKSgf9gx_aVqmm-GpldlXOI6o8veY4J8fybA [32m200 [0m3.362 ms - 126349[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTgyWiIsImlhdCI6MTQ5MDA3NTgyNn0.TAQ_HcPvv6zkfKXn2ZOYihpZCJ1R8iiNx3zjlBz3SZg [32m200 [0m3.227 ms - 97902[0m
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjMWY0MDY0OTdjNTAzNWZiNjkzNzcxZDU5NThiMGIzMyIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTgxWiIsImlhdCI6MTQ5MDA3NTgyNn0.pdMvVBpsps3UhnPlfRTvb7ZyWRBeMAwmzi-gdhSfy9U [32m200 [0m3.946 ms - 153224[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'no0T9hyqCPXU' LIMIT 1;
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wjYBTge0t3BV' LIMIT 1;
+Sent: C7ZXMKIUwAASYRr.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3allCVGdlMHQzQlYiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTY1WiIsImlhdCI6MTQ5MDA3NTgyNn0.Kt9y9QikrbBmWIgSdW9A0WPh6sKM--CLweWU5HV2VwA [32m200 [0m7.523 ms - 153224[0m
+Executing (default): SELECT "id", "name", "value", "description", "path", "createdAt", "updatedAt", "id_user" FROM "product" AS "Product" WHERE "Product"."value" = 'wnIWU9mjTC9U' LIMIT 1;
+Sent: C7ZrzBaVoAAtZYu.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJ3bklXVTltalRDOVUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTY2WiIsImlhdCI6MTQ5MDA3NTgyNn0.b1q_NKMUL5VlVMEfzvnO6XdrVcinSoOQHIaG7AgW3AY [32m200 [0m2.852 ms - 97902[0m
+Sent: C7S8WGcUwAAc2la.jpg
+[0mGET /products/img?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9kdWN0VmFsdWUiOiJubzBUOWh5cUNQWFUiLCJjYW1wYWlnblZhbHVlIjoiMEIwWGQ3anBiY1hlIiwiZW1haWxNZDUiOiJjODY4Njk1Mzc4MzRlZmViNGU5NmNkNWIyZTZmNDgzMCIsInNlbnRBdCI6IjIwMTctMDMtMjFUMDU6NTc6MDYuMTY2WiIsImlhdCI6MTQ5MDA3NTgyNn0.KW-2Ont0UQAKl2jsEWUrm0NjEU0vNnudhK-MkDYC7D8 [32m200 [0m7.461 ms - 126349[0m
+2017-03-22 02:49:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 02:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 03:19:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 03:19:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 03:49:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 03:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 04:19:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 04:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 04:49:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 04:49:40
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 05:19:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 05:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 05:49:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 05:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 06:19:40
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 06:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 06:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 06:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 07:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 07:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 07:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 07:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 08:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 08:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+[0mGET / [32m200 [0m297.434 ms - 170[0m
+2017-03-22 08:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 08:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 09:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 09:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 09:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 09:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 10:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 10:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 10:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 10:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 11:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 11:19:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 11:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 11:49:41
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 12:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 12:19:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 12:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 12:49:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 13:19:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 13:19:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 13:49:41
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 13:49:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 14:19:42
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 14:19:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+[0mGET / [32m200 [0m40.129 ms - 170[0m
+[0mGET /stylesheets/style.css [32m200 [0m1.425 ms - 111[0m
+2017-03-22 14:49:42
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 14:49:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 15:19:42
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 15:19:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+2017-03-22 15:49:42
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-22 15:49:42
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+
+> api-mailer-v2@0.0.0 start /home/ubuntu/api-mailer-v2
+> node ./bin/www
+
+2017-03-23 23:23:10
+Executing (default): SELECT "id", "host", "port", "is_secure", "username", "password", "createdAt", "updatedAt" FROM "outmail" AS "Outmail" LIMIT 1;
+Server is ready to take our messages
+Executing (default): SELECT "id", "name", "status", "value", "description", "subject", "friendly_from", "body_html", "link_click", "link_unsubscribe", "link_open", "createdAt", "updatedAt", "id_user" FROM "campaign" AS "Campaign" WHERE "Campaign"."status" = 0;
+campaigns were sent successfully!
+2017-03-23 23:23:10
+Executing (default): select min(email.md5) as md5 from campaign_list left join list ON campaign_list.id_list = list.id left join campaign ON campaign_list.id_campaign = campaign.id left join email_list ON list.id = email_list.id_list left join email on email_list.id_email = email.id where campaign.id=3 and campaign.status=0 group by email.md5
+No emails found for this campaign
+listas enables - undefined
+undefined
+BBBB
+Executing (default): SELECT "id", "name", "value", "emails_number", "is_enable", "createdAt", "updatedAt", "id_user" FROM "list" AS "List";
+[0mGET /lists [32m200 [0m114.752 ms - 755[0m
